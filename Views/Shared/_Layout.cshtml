@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebSite</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header sticky-top bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-uppercase" asp-controller="Home" asp-action="Index">Muscat Gates</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto gap-lg-3">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#for-rent">For Rent</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#for-sale">For Sale</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                    </ul>
+                    <a class="btn btn-dark px-4" href="#contact">Get Consultation</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        @RenderBody()
+    </main>
+
+    <footer class="footer-section mt-5 py-5 bg-dark text-light" id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Muscat Gates</h5>
+                    <p class="text-light-emphasis">Your trusted real estate listing platform in Oman.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold mb-3">Main Menu</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#for-sale">For Sale</a></li>
+                        <li><a href="#for-rent">For Rent</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Contact Information</h6>
+                    <p class="mb-1">Sultan Qaboos Street, Muscat, Oman</p>
+                    <p class="mb-1">+968 9123 456</p>
+                    <p class="mb-1">info@muscatgates.com</p>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-2 footer-socials">
+                        <a href="#" class="social-circle"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-circle"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-circle"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4" />
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <small>© 2026 Powered by Muscat Gates</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
