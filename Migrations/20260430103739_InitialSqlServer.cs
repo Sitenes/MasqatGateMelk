@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebSite.Migrations
 {
     /// <inheritdoc />
-    public partial class AddLatestChanges : Migration
+    public partial class InitialSqlServer : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,15 +15,15 @@ namespace WebSite.Migrations
                 name: "Agents",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    NameFa = table.Column<string>(type: "TEXT", nullable: false),
-                    NameEn = table.Column<string>(type: "TEXT", nullable: false),
-                    NameAr = table.Column<string>(type: "TEXT", nullable: false),
-                    ExpertFa = table.Column<string>(type: "TEXT", nullable: false),
-                    ExpertEn = table.Column<string>(type: "TEXT", nullable: false),
-                    ExpertAr = table.Column<string>(type: "TEXT", nullable: false),
-                    ImageAddress = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NameFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NameEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NameAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ExpertFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ExpertEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ExpertAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageAddress = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -34,21 +34,21 @@ namespace WebSite.Migrations
                 name: "Articles",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    TitleFa = table.Column<string>(type: "TEXT", nullable: false),
-                    TitleEn = table.Column<string>(type: "TEXT", nullable: false),
-                    TitleAr = table.Column<string>(type: "TEXT", nullable: false),
-                    SummaryFa = table.Column<string>(type: "TEXT", nullable: false),
-                    SummaryEn = table.Column<string>(type: "TEXT", nullable: false),
-                    SummaryAr = table.Column<string>(type: "TEXT", nullable: false),
-                    ContentFa = table.Column<string>(type: "TEXT", nullable: false),
-                    ContentEn = table.Column<string>(type: "TEXT", nullable: false),
-                    ContentAr = table.Column<string>(type: "TEXT", nullable: false),
-                    AuthorName = table.Column<string>(type: "TEXT", nullable: false),
-                    ImageAddress = table.Column<string>(type: "TEXT", nullable: false),
-                    PublishedAt = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    IsPublished = table.Column<bool>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TitleFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TitleEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TitleAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SummaryFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SummaryEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SummaryAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContentFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContentEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContentAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AuthorName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PublishedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsPublished = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -59,32 +59,32 @@ namespace WebSite.Migrations
                 name: "Houses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    PropertyCode = table.Column<string>(type: "TEXT", nullable: true),
-                    City = table.Column<string>(type: "TEXT", nullable: true),
-                    District = table.Column<string>(type: "TEXT", nullable: true),
-                    Neighborhood = table.Column<string>(type: "TEXT", nullable: true),
-                    AddressLine = table.Column<string>(type: "TEXT", nullable: true),
-                    LandArea = table.Column<double>(type: "REAL", nullable: true),
-                    BuildingArea = table.Column<double>(type: "REAL", nullable: true),
-                    UnitNumber = table.Column<int>(type: "INTEGER", nullable: true),
-                    YearRenovated = table.Column<int>(type: "INTEGER", nullable: true),
-                    NearbyFacilities = table.Column<string>(type: "TEXT", nullable: true),
-                    AmenitiesFa = table.Column<string>(type: "TEXT", nullable: true),
-                    AmenitiesEn = table.Column<string>(type: "TEXT", nullable: true),
-                    AmenitiesAr = table.Column<string>(type: "TEXT", nullable: true),
-                    RegistrationTime = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    ConstructionTime = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    HasParking = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ParkingCount = table.Column<int>(type: "INTEGER", nullable: true),
-                    Deed = table.Column<string>(type: "TEXT", nullable: false),
-                    ConstructionStatus = table.Column<string>(type: "TEXT", nullable: false),
-                    HasPool = table.Column<bool>(type: "INTEGER", nullable: false),
-                    PoolArea = table.Column<double>(type: "REAL", nullable: true),
-                    TreeCount = table.Column<int>(type: "INTEGER", nullable: true),
-                    HasElevator = table.Column<bool>(type: "INTEGER", nullable: false),
-                    FloorCount = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PropertyCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    District = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Neighborhood = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddressLine = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LandArea = table.Column<double>(type: "float", nullable: true),
+                    BuildingArea = table.Column<double>(type: "float", nullable: true),
+                    UnitNumber = table.Column<int>(type: "int", nullable: true),
+                    YearRenovated = table.Column<int>(type: "int", nullable: true),
+                    NearbyFacilities = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AmenitiesFa = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AmenitiesEn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AmenitiesAr = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RegistrationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ConstructionTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HasParking = table.Column<bool>(type: "bit", nullable: false),
+                    ParkingCount = table.Column<int>(type: "int", nullable: true),
+                    Deed = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ConstructionStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HasPool = table.Column<bool>(type: "bit", nullable: false),
+                    PoolArea = table.Column<double>(type: "float", nullable: true),
+                    TreeCount = table.Column<int>(type: "int", nullable: true),
+                    HasElevator = table.Column<bool>(type: "bit", nullable: false),
+                    FloorCount = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -95,11 +95,11 @@ namespace WebSite.Migrations
                 name: "Keywords",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ContentFa = table.Column<string>(type: "TEXT", nullable: false),
-                    ContentEn = table.Column<string>(type: "TEXT", nullable: false),
-                    ContentAr = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ContentFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContentEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContentAr = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -110,12 +110,12 @@ namespace WebSite.Migrations
                 name: "Materials",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ContentFa = table.Column<string>(type: "TEXT", nullable: false),
-                    ContentEn = table.Column<string>(type: "TEXT", nullable: false),
-                    ContentAr = table.Column<string>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ContentFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContentEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContentAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -126,11 +126,11 @@ namespace WebSite.Migrations
                 name: "StaticDataGroups",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Description = table.Column<string>(type: "TEXT", nullable: true),
-                    Page = table.Column<string>(type: "TEXT", nullable: false),
-                    Container = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Page = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Container = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -141,10 +141,10 @@ namespace WebSite.Migrations
                 name: "Statuses",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    Description = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -155,10 +155,10 @@ namespace WebSite.Migrations
                 name: "HouseImages",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ImageAddress = table.Column<string>(type: "TEXT", nullable: false),
-                    HouseId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HouseId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -175,14 +175,14 @@ namespace WebSite.Migrations
                 name: "staticDatas",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    StringContentFa = table.Column<string>(type: "TEXT", nullable: true),
-                    StringContentEn = table.Column<string>(type: "TEXT", nullable: true),
-                    StringContentAr = table.Column<string>(type: "TEXT", nullable: true),
-                    BestCountOfNumber = table.Column<int>(type: "INTEGER", nullable: true),
-                    ImageAdress = table.Column<string>(type: "TEXT", nullable: true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    GroupId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    StringContentFa = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StringContentEn = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StringContentAr = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BestCountOfNumber = table.Column<int>(type: "int", nullable: true),
+                    ImageAdress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    GroupId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -199,17 +199,17 @@ namespace WebSite.Migrations
                 name: "Deals",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    DownPayment = table.Column<decimal>(type: "TEXT", nullable: true),
-                    MonthlyPayment = table.Column<decimal>(type: "TEXT", nullable: true),
-                    TotalPrice = table.Column<decimal>(type: "TEXT", nullable: false),
-                    IsExchangeable = table.Column<bool>(type: "INTEGER", nullable: false),
-                    HaveOffer = table.Column<bool>(type: "INTEGER", nullable: false),
-                    FinalDownPayment = table.Column<decimal>(type: "TEXT", nullable: true),
-                    FinalMonthlyPayment = table.Column<decimal>(type: "TEXT", nullable: true),
-                    FinalTotalPrice = table.Column<decimal>(type: "TEXT", nullable: false),
-                    DealTypeId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DownPayment = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    MonthlyPayment = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    IsExchangeable = table.Column<bool>(type: "bit", nullable: false),
+                    HaveOffer = table.Column<bool>(type: "bit", nullable: false),
+                    FinalDownPayment = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    FinalMonthlyPayment = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    FinalTotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DealTypeId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -226,21 +226,21 @@ namespace WebSite.Migrations
                 name: "Floors",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Area = table.Column<double>(type: "REAL", nullable: false),
-                    RoomCount = table.Column<int>(type: "INTEGER", nullable: false),
-                    Capacity = table.Column<int>(type: "INTEGER", nullable: false),
-                    HasBalcony = table.Column<bool>(type: "INTEGER", nullable: false),
-                    BalconyArea = table.Column<double>(type: "REAL", nullable: true),
-                    HasStorage = table.Column<bool>(type: "INTEGER", nullable: false),
-                    StorageArea = table.Column<double>(type: "REAL", nullable: true),
-                    ConstructionDirection = table.Column<string>(type: "TEXT", nullable: false),
-                    CoolingStatus = table.Column<string>(type: "TEXT", nullable: false),
-                    HeatingStatus = table.Column<string>(type: "TEXT", nullable: false),
-                    HotWaterStatus = table.Column<string>(type: "TEXT", nullable: false),
-                    ToiletTypeId = table.Column<int>(type: "INTEGER", nullable: false),
-                    HouseId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Area = table.Column<double>(type: "float", nullable: false),
+                    RoomCount = table.Column<int>(type: "int", nullable: false),
+                    Capacity = table.Column<int>(type: "int", nullable: false),
+                    HasBalcony = table.Column<bool>(type: "bit", nullable: false),
+                    BalconyArea = table.Column<double>(type: "float", nullable: true),
+                    HasStorage = table.Column<bool>(type: "bit", nullable: false),
+                    StorageArea = table.Column<double>(type: "float", nullable: true),
+                    ConstructionDirection = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CoolingStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HeatingStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HotWaterStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ToiletTypeId = table.Column<int>(type: "int", nullable: false),
+                    HouseId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -263,16 +263,16 @@ namespace WebSite.Migrations
                 name: "Advertisements",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    TitleFa = table.Column<string>(type: "TEXT", nullable: false),
-                    TitleEn = table.Column<string>(type: "TEXT", nullable: false),
-                    TitleAr = table.Column<string>(type: "TEXT", nullable: false),
-                    DescriptionFa = table.Column<string>(type: "TEXT", nullable: false),
-                    DescriptionEn = table.Column<string>(type: "TEXT", nullable: false),
-                    DescriptionAr = table.Column<string>(type: "TEXT", nullable: false),
-                    HouseId = table.Column<int>(type: "INTEGER", nullable: false),
-                    DealId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TitleFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TitleEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TitleAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DescriptionFa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DescriptionEn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DescriptionAr = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HouseId = table.Column<int>(type: "int", nullable: false),
+                    DealId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -295,8 +295,8 @@ namespace WebSite.Migrations
                 name: "FloorMaterials",
                 columns: table => new
                 {
-                    FloorMaterialsId = table.Column<int>(type: "INTEGER", nullable: false),
-                    FloorsId = table.Column<int>(type: "INTEGER", nullable: false)
+                    FloorMaterialsId = table.Column<int>(type: "int", nullable: false),
+                    FloorsId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -319,8 +319,8 @@ namespace WebSite.Migrations
                 name: "AdvertisementKeywords",
                 columns: table => new
                 {
-                    AdvertisementsId = table.Column<int>(type: "INTEGER", nullable: false),
-                    KeywordsId = table.Column<int>(type: "INTEGER", nullable: false)
+                    AdvertisementsId = table.Column<int>(type: "int", nullable: false),
+                    KeywordsId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
