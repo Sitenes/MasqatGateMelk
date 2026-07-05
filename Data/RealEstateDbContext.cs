@@ -1,7 +1,7 @@
+using MasqatGate.Models;
 using Microsoft.EntityFrameworkCore;
-using WebSite.Models;
 
-namespace WebSite.Data;
+namespace MasqatGate.Data;
 
 public class RealEstateDbContext : DbContext
 {

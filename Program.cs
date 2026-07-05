@@ -1,5 +1,5 @@
+using MasqatGate.Data;
 using Microsoft.EntityFrameworkCore;
-using WebSite.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,5 +29,12 @@ using (var scope = app.Services.CreateScope())
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<RealEstateDbContext>();
+
+    await db.Database.MigrateAsync();
+}
 
 app.Run();

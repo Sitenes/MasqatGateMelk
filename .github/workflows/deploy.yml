@@ -1,0 +1,123 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - master
+      - main
+      - publish
+
+env:
+  DOTNET_VERSION: "10.0.x"
+  PUBLISH_COMMAND: "dotnet publish -c Release -r linux-x64 --no-self-contained -o out"
+  GITHUB_REPO_NAME: "MasqatGateMelk" 
+  APP_NAME: "MasqatGate" 
+  APP_PORT: "5004"
+  ASPNETCORE_ENVIRONMENT: "Production"
+  BASE_DIR: "/home/amin/User/Projects/Dotnet/Publish"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Publish
+        run: |
+          echo "Running publish command:"
+          echo "${{ env.PUBLISH_COMMAND }}"
+          ${{ env.PUBLISH_COMMAND }}
+
+      - name: Debug publish output
+        run: |
+          echo "out directory content:"
+          ls -lah out
+
+      - name: Upload to Server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "out/*"
+          target: "${{ env.BASE_DIR }}/${{ env.GITHUB_REPO_NAME || github.event.repository.name }}"
+
+      - name: Restart App
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command_timeout: 20m
+          script: |
+            set -Eeuo pipefail
+
+            trap '
+              EXIT_CODE=$?
+              echo "========================================="
+              echo "DEPLOY FAILED"
+              echo "Exit Code: $EXIT_CODE"
+              echo "Line: $LINENO"
+              echo "Command: $BASH_COMMAND"
+              echo "========================================="
+              exit $EXIT_CODE
+            ' ERR
+
+            GITHUB_REPO_NAME="${{ env.GITHUB_REPO_NAME || github.event.repository.name }}"
+            BASE_DIR="${{ env.BASE_DIR }}"
+            BASE_DIR="${BASE_DIR:-/home/amin/User/Projects/Dotnet/Publish}"
+
+            APP_NAME="${{ env.APP_NAME }}"
+
+            APP_PORT="${{ env.APP_PORT }}"
+            APP_PORT="${APP_PORT:-5002}"
+
+            ENVIRONMENT="${{ env.ASPNETCORE_ENVIRONMENT }}"
+            ENVIRONMENT="${ENVIRONMENT:-Production}"
+
+            APP_DIR="$BASE_DIR/$GITHUB_REPO_NAME"
+            LOG_FILE="$APP_DIR/app.log"
+            PID_FILE="$APP_DIR/app.pid"
+
+            echo "APP_DIR=$APP_DIR"
+            echo "APP_PORT=$APP_PORT"
+
+            mkdir -p "$APP_DIR"
+
+            echo "Stopping old process..."
+            PID=$(lsof -t -i:$APP_PORT || true)
+
+            if [ -n "$PID" ]; then
+              echo "Killing PID: $PID"
+              kill -9 "$PID" || true
+              sleep 3
+            fi
+
+            cd "$APP_DIR/out"
+
+            echo "Current directory:"
+            pwd
+            echo "Files:"
+            ls -lah
+            chmod +x "$APP_NAME"
+
+            echo "Starting app..."
+
+            nohup env \
+              ASPNETCORE_ENVIRONMENT="$ENVIRONMENT" \
+              ASPNETCORE_URLS="http://127.0.0.1:$APP_PORT" \
+              ./"$APP_NAME" \
+              > "$LOG_FILE" 2>&1 &
+
+            echo $! > "$PID_FILE"
+
+            echo "Started PID: $(cat $PID_FILE)"
+            sleep 2
+            tail --pid=$(cat "$PID_FILE") -f "$LOG_FILE"
