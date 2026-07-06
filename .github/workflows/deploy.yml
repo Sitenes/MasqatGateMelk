@@ -115,3 +115,9 @@ jobs:
 
             echo "===== LIVE LOG (10 sec) ====="
             timeout 10s tail -f "$LOG_FILE" || true
+
+            if ! ps -p $(cat "$PID_FILE") >/dev/null; then
+                echo "Application crashed"
+                exit 1
+            fi
+            echo "✅✅ App is running"
