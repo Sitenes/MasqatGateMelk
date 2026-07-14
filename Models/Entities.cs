@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WebSite.Models;
+namespace MasqatGate.Models;
 
 public class Advertisement
 {

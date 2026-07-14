@@ -1,4 +1,4 @@
-namespace WebSite.Models;
+namespace MasqatGate.Models;
 
 public class ErrorViewModel
 {

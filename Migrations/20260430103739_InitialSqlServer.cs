@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WebSite.Migrations
+namespace MasqatGate.Migrations
 {
     /// <inheritdoc />
     public partial class InitialSqlServer : Migration

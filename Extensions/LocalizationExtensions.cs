@@ -1,6 +1,6 @@
-using WebSite.Models;
+using MasqatGate.Models;
 
-namespace WebSite.Extensions;
+namespace MasqatGate.Extensions;
 
 public static class AgentExtensions
 {

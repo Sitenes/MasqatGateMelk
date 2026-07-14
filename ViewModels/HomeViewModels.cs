@@ -1,6 +1,6 @@
-using WebSite.Models;
+using MasqatGate.Models;
 
-namespace WebSite.ViewModels;
+namespace MasqatGate.ViewModels;
 
 public class HomeViewModel
 {

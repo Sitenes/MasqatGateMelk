@@ -1,9 +1,9 @@
+using MasqatGate.Data;
+using MasqatGate.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebSite.Data;
-using WebSite.ViewModels;
 
-namespace WebSite.Controllers;
+namespace MasqatGate.Controllers;
 
 public class HomeController : Controller
 {

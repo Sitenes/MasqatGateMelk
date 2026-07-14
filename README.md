@@ -22,8 +22,8 @@ A .NET 10 ASP.NET Core MVC real estate website styled with Bootstrap and backed 
 ## Run It
 
 ```bash
- dotnet build "c:\Users\Shams\Desktop\New folder\WebSite.csproj"
- dotnet run --project "c:\Users\Shams\Desktop\New folder\WebSite.csproj"
+ dotnet build "c:\Users\Shams\Desktop\New folder\MasqatGate.csproj"
+ dotnet run --project "c:\Users\Shams\Desktop\New folder\MasqatGate.csproj"
 ```
 
 The app uses SQLite and will create `realestate.db` automatically on first launch.
@@ -54,7 +54,7 @@ The homepage reads content from `StaticData` through the `LocalizedContent` exte
 ## Important Files
 
 - `Program.cs`
-- `WebSite.csproj`
+- `MasqatGate.csproj`
 - `Controllers/HomeController.cs`
 - `Data/RealEstateDbContext.cs`
 - `Data/DbInitializer.cs`
