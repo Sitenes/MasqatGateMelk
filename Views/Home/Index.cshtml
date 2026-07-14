@@ -13,173 +13,239 @@
 }
 
 <section class="hero-wrap" id="home">
-    <div class="hero-image-panel">
+    <div class="hero-image-panel"
+         style="background-image: url('/image/bg_1.jpg'); background-size: cover; background-position: center;display: flex;flex-wrap: wrap;align-content: center;">
         <div class="hero-overlay"></div>
         <div class="container position-relative h-100">
             <div class="row h-100 align-items-center justify-content-center text-center text-white">
                 <div class="col-lg-8">
-                    <h1 class="display-5 fw-bold mb-3">@GetText("E1", "Find the Right Property in Oman")</h1>
-                    <p class="lead mb-4">@GetText("E2", "Muscat Gates connects trusted real estate agencies with property seekers across Oman.")</p>
-                    <a class="btn btn-primary px-4" href="#for-sale">@GetText("E3", "Browse Properties")</a>
+                    <h1 class="display-5 fw-bold mb-3">@GetText("E1", "Discover Your Dream Property in Oman with Muscat Gates")</h1>
+                    <p class="lead mb-4">@GetText("E2", "Muscat Gates is a real estate listing platform in Oman that connects property seekers with trusted real estate agencies. Our goal is to simplify property search and help agencies promote their listings to the right audience.")</p>
+                    <a class="btn btn-primary px-4" href="https://muscatgates.com/for-sale/">Explore Properties</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="container hero-partners-wrap">
         <div class="hero-partners-card shadow">
-            <p class="text-center text-uppercase small fw-semibold mb-3">Oman Developers and Real Estates:</p>
-            <div class="partner-strip">
-                @for (var i = 0; i < 8; i++)
-                {
-                    <div class="partner-mark"><i class="fa-solid fa-circle"></i></div>
-                }
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section-block py-5" id="about">
-    <div class="container text-center">
-        <div class="eyebrow">@GetText("A1", "About Us")</div>
-        <h2 class="section-title mx-auto">@GetText("A2", "Your Trusted Real Estate Listing Platform in Oman")</h2>
-        <div class="mx-auto content-narrow">
-            <p>@GetText("A3", "Muscat Gates is a modern real estate platform that connects property seekers with professional real estate agencies across Oman.")</p>
-            <p>@GetText("A4", "Our mission is to make property searching simple, transparent, and reliable.")</p>
-            <a class="btn btn-dark px-4" href="#for-sale">Explore Properties</a>
-        </div>
-    </div>
-</section>
-
-<section class="section-block py-5" id="services">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
-            <div>
-                <div class="eyebrow">Our Services</div>
-                <h2 class="section-title text-start mb-0">@GetText("S1", "Real Estate Solutions for Buyers, Tenants, and Agencies")</h2>
-            </div>
-            <a class="btn btn-outline-dark" href="#contact">Contact us</a>
-        </div>
-
-        <div class="row g-4" id="for-sale">
-            <div class="col-lg-6">
-                <div class="service-card h-100">
-                    <div class="service-icon"><i class="fa-solid fa-house"></i></div>
-                    <h3>@GetText("S2", "Property Listings for Sale")</h3>
-                    <p>Explore a wide range of properties for sale across Oman including apartments, villas, offices, and commercial spaces.</p>
-                    <a class="btn btn-sm btn-dark" href="#">Browse Properties for Sale</a>
-                    <div class="service-image mt-4"></div>
-                </div>
-            </div>
-            <div class="col-lg-6" id="for-rent">
-                <div class="service-card h-100">
-                    <div class="service-icon"><i class="fa-solid fa-key"></i></div>
-                    <h3>@GetText("S3", "Rental Properties")</h3>
-                    <p>Find apartments, villas, and commercial properties available for rent with direct access to trusted agencies.</p>
-                    <a class="btn btn-sm btn-dark" href="#">Browse Properties for Rent</a>
-                    <div class="service-image service-image-alt mt-4"></div>
+            <p class="text-center text-uppercase small fw-semibold mb-3">Leading Omani Developers and Elite Real Estate
+                Partners:</p>
+                <div class="partner-strip">
+                    @for (var i = 1; i <= 8; i++)
+                    {
+                        <div class="partner-mark">
+                            <img src="/image/H@(i).jpg" alt="Partner"
+                                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.9rem; opacity: 0.7;">
+                        </div>
+                    }
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section-block py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <div class="eyebrow">What Sets Us Apart</div>
-            <h2 class="section-title">@GetText("ST1", "Growing Real Estate Network in Oman")</h2>
-        </div>
-        <div class="row g-4 text-center stats-grid">
-            <div class="col-6 col-lg-3">
-                <div class="stat-box"><div class="stat-value">100+</div><div class="stat-label">Listed Properties</div></div>
-            </div>
-            <div class="col-6 col-lg-3">
-                <div class="stat-box"><div class="stat-value">2+ Years</div><div class="stat-label">Experience</div></div>
-            </div>
-            <div class="col-6 col-lg-3">
-                <div class="stat-box"><div class="stat-value">20+</div><div class="stat-label">Partner Companies</div></div>
-            </div>
-            <div class="col-6 col-lg-3">
-                <div class="stat-box"><div class="stat-value">10+</div><div class="stat-label">Off-Plan Projects</div></div>
+    <section class="section-block py-5" id="about">
+        <div class="container text-center">
+            <div class="eyebrow">@GetText("A1", "About Muscat Gates")</div>
+            <h2 class="section-title mx-auto">@GetText("A2", "Connecting Property Seekers with Trusted Agencies in Oman")</h2>
+            <div class="mx-auto content-narrow">
+                <p>@GetText("A3", "Muscat Gates is a real estate listing platform in Oman that connects property seekers with trusted real estate agencies. Our goal is to simplify property search and help agencies promote their listings to the right audience.")</p>
+                <div class="mt-4">
+                    <a class="btn btn-dark px-4" href="https://muscatgates.com/about-us/">Learn More About Us</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section-block py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <div class="eyebrow">Testimonials</div>
-            <h2 class="section-title">@GetText("T1", "What Our Partners Say")</h2>
-            <p class="mx-auto content-narrow">@GetText("T2", "Real estate professionals trust Muscat Gates to showcase their properties and connect with buyers and tenants.")</p>
-        </div>
-        <div class="row g-4 align-items-start">
-            <div class="col-lg-4">
-                <div class="testimonial-card h-100">
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <div class="testimonial-avatar"><i class="fa-solid fa-building"></i></div>
+    <section class="section-block py-5" id="services">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+                <div>
+                    <div class="eyebrow">Our Specialized Real Estate Solutions</div>
+                    <h2 class="section-title text-start mb-0">@GetText("S1", "Comprehensive Real Estate Solutions Tailored for Buyers, Tenants, and Professional Agencies")</h2>
+                </div>
+                <a class="btn btn-outline-dark" href="#contact">Get Expert Real Estate Consultation</a>
+            </div>
+
+            <div class="row g-4" id="for-sale">
+                <div class="col-lg-6">
+                    <div class="service-card h-100">
+                        <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+                        <h3>@GetText("S2", "Exquisite Residential and Commercial Properties for Sale")</h3>
+                        <p>Explore an extensive portfolio of residential and commercial properties for sale in Oman. From
+                            luxury villas in Muscat to contemporary apartments and high-yield commercial locations, we offer
+                            verified investment opportunities for every requirement.</p>
+                            <a class="btn btn-sm btn-dark" href="#">Explore Properties for Sale in Oman</a>
+                            <div class="service-image mt-4" style="background-image: url('/image/H1.jpg');"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" id="for-rent">
+                        <div class="service-card h-100">
+                            <div class="service-icon"><i class="fa-solid fa-key"></i></div>
+                            <h3>@GetText("S3", "Premium Residential and Commercial Properties for Rent")</h3>
+                            <p>Find the perfect space for your lifestyle or business with our curated rental listings. We
+                                provide direct access to trusted agencies offering apartments, spacious villas, and strategic
+                                commercial units available for rent across Oman trusted agencies offering apartments, spacious
+                                villas.</p>
+                                <a class="btn btn-sm btn-dark" href="#">Browse Premium Properties for Rent</a>
+                                <div class="service-image service-image-alt mt-4" style="background-image: url('/image/H2.jpg');">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block py-5 bg-light">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
                         <div>
-                            <h4 class="mb-1">Real Estate Agency</h4>
-                            <small class="text-muted">Muscat</small>
+                            <div class="eyebrow">The Muscat Gates Advantage</div>
+                            <h2 class="section-title">@GetText("ST1", "Oman’s Most Rapidly Expanding Real Estate Network")</h2>
                         </div>
                     </div>
-                    <p>"Muscat Gates helped us promote our listings to the right audience and made it easy for clients to find and contact us."</p>
-                    <div class="revenue-box mt-4">
-                        <span>Revenue Growth</span>
-                        <div class="display-6 fw-bold">8%</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="testimonial-photo"></div>
-            </div>
-            <div class="col-lg-4">
-                <div class="testimonial-photo testimonial-photo-alt"></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section-block py-5 bg-light" id="agents">
-    <div class="container">
-        <div class="text-center mb-5">
-            <div class="eyebrow">Our Team</div>
-            <h2 class="section-title">Trusted Agents</h2>
-        </div>
-        <div class="row g-4">
-            @foreach (var agent in Model.agents)
-            {
-                <div class="col-md-6 col-lg-3">
-                    <div class="agent-card h-100">
-                        <div class="agent-avatar"><i class="fa-solid fa-user-tie"></i></div>
-                        <h4>@agent.LocalizedName(lang)</h4>
-                        <p>@agent.LocalizedExpert(lang)</p>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-</section>
-
-<section class="section-block py-5" id="blog">
-    <div class="container">
-        <div class="text-center mb-5">
-            <div class="eyebrow">Blog</div>
-            <h2 class="section-title">Latest Articles</h2>
-        </div>
-        <div class="row g-4">
-            @foreach (var article in Model.articles)
-            {
-                <div class="col-md-6 col-lg-3">
-                    <div class="blog-card h-100">
-                        <div class="blog-image"></div>
-                        <div class="p-3">
-                            <h5>@article.LocalizedTitle(lang)</h5>
-                            <p>@article.LocalizedSummary(lang)</p>
+                    <div class="row g-4 text-center stats-grid">
+                        <div class="col-6 col-lg-3">
+                            <div class="stat-box">
+                                <div class="stat-value">100+</div>
+                                <div class="stat-label">Exclusive Verified Property Listings</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="stat-box">
+                                <div class="stat-value">2+ Years</div>
+                                <div class="stat-label">Years of Dedicated Real Estate Excellence</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="stat-box">
+                                <div class="stat-value">20+</div>
+                                <div class="stat-label">Verified Partner Real Estate Agencies</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <div class="stat-box">
+                                <div class="stat-value">10+</div>
+                                <div class="stat-label">Strategic Off-Plan</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            }
-        </div>
-    </div>
-</section>
+            </section>
+
+            <section class="section-block py-5">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+                        <div>
+                            <div class="eyebrow">Voices of Our Valued Partners</div>
+                            <h2 class="section-title">@GetText("T1", "The Trust Behind Muscat Gates")</h2>
+                            <p class="mx-auto content-narrow">@GetText("T2", "Leading real estate professionals and agencies across the Sultanate trust Muscat Gates to showcase their premium portfolios and connect with a global audience of qualified buyers and tenants.")</p>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-7">
+                            <div class="sticky-lg-top" style="top: 100px; z-index: 1; margin-bottom: 2rem;">
+                                <div class="testimonial-card">
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+                                        <div class="testimonial-avatar"><i class="fa-solid fa-building"></i></div>
+                                        <div>
+                                            <h4 class="mb-1">Elite Real Estate Agency Partner</h4>
+                                            <small class="text-muted">Muscat, Oman</small>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content">
+                                        <p class="fs-6 lh-lg text-secondary">
+                                            Muscat Gates is not just a listing platform; it is a sophisticated real estate ecosystem
+                                            dedicated to redefining the property experience in the Sultanate of Oman. In a market
+                                            that demands precision and trust, we provide a bridge between visionary developers and
+                                            selective property seekers.
+                                            <br /><br />
+                                            Our platform leverages advanced digital marketing strategies and deep market
+                                            intelligence to ensure that every property—from luxury beachfront villas in Al Mouj to
+                                            premium commercial spaces in the heart of Muscat—receives the visibility it deserves.
+                                            For our partners, this translates into a <strong>highly targeted audience</strong>,
+                                            <strong>shorter vacancy periods</strong>, and <strong>superior conversion
+                                            rates</strong>.
+                                            <br /><br />
+                                            We pride ourselves on our rigorous verification process, which guarantees transparency
+                                            and security for every user. By combining local expertise with international standards,
+                                            Muscat Gates empowers
+                                        </p>
+                                    </div>
+                                    <div class="revenue-box mt-4">
+                                        <span>Partner Revenue Growth</span>
+                                        <div class="display-6 fw-bold text-primary">8%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="d-flex flex-column gap-4">
+                                <div class="testimonial-photo shadow-sm"
+                                     style="background-image: url('/image/H6.jpg'); background-size: cover; background-position: center; min-height: 400px;">
+                                </div>
+                                <div class="testimonial-photo testimonial-photo-alt shadow-sm"
+                                     style="background-image: url('/image/H9.jpg'); background-size: cover; background-position: center; min-height: 400px;">
+                                </div>
+                                <div class="testimonial-photo shadow-sm"
+                                     style="background-image: url('/image/H1.jpg'); background-size: cover; background-position: center; min-height: 400px;">
+                                </div>
+                                <div class="testimonial-photo testimonial-photo-alt shadow-sm"
+                                     style="background-image: url('/image/H2.jpg'); background-size: cover; background-position: center; min-height: 400px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block py-5 bg-light" id="agents">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+                        <div>
+                            <div class="eyebrow">The Muscat Gates Expert Team</div>
+                            <h2 class="section-title">Highly Professional Real Estate Experts and Trusted Agents</h2>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        @for (int i = 0; i < Model.articles.Count; i++)
+                        {
+                            <div class="col-md-6 col-lg-3">
+                                <div class="agent-card h-100">
+                                    <div class="agent-avatar" style="background-image: url('/image/p@(i+1).jpg');">
+                                    </div>
+                                    <h4>@Model.agents[i].LocalizedName(lang)</h4>
+                                    <p>@Model.agents[i].LocalizedExpert(lang)</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block py-5" id="blog">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
+                        <div>
+                            <div class="eyebrow">Real Estate Insights and Market Intelligence</div>
+                            <h2 class="section-title">Explore the Latest Real Estate Trends, Investment Advice, and Omani Market
+                                News
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        @for (int i = 0; i < Model.articles.Count; i++)
+                        {
+                            var article = Model.articles[i];
+                            <div class="col-md-6 col-lg-3">
+                                <div class="blog-card h-100 p-4">
+                                    <div class="blog-image" style="background-image: url(/image/H@(i+1).jpg);"></div>
+                                    <div class="p-3">
+                                        <h5>@article.LocalizedTitle(lang)</h5>
+                                        <p>@article.LocalizedSummary(lang)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </section>
