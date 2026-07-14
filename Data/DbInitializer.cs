@@ -158,19 +158,27 @@ public static class DbInitializer
         };
 
         var agents = new List<Agent>
-        {
-            new() { NameEn = "Ahmad Al Harthy", NameFa = "احمد الحارثی", NameAr = "أحمد الحارثي", ExpertEn = "Sales Consultant", ExpertFa = "مشاور فروش", ExpertAr = "مستشار مبيعات", ImageAddress = "/images/agent-1.jpg" },
-            new() { NameEn = "Sara Al Lawati", NameFa = "سارا اللواتی", NameAr = "سارة اللواتي", ExpertEn = "Property Advisor", ExpertFa = "مشاور ملک", ExpertAr = "مستشارة عقارية", ImageAddress = "/images/agent-2.jpg" },
-            new() { NameEn = "Yousef Al Busaidi", NameFa = "یوسف البوسعیدی", NameAr = "يوسف البوسعيدي", ExpertEn = "Rental Specialist", ExpertFa = "متخصص اجاره", ExpertAr = "متخصص إيجارات", ImageAddress = "/images/agent-3.jpg" },
-            new() { NameEn = "Maha Al Nabhani", NameFa = "ماها النبهانی", NameAr = "ماها النبهاني", ExpertEn = "Investment Advisor", ExpertFa = "مشاور سرمایه‌گذاری", ExpertAr = "مستشارة استثمار", ImageAddress = "/images/agent-4.jpg" }
-        };
+{
+    new() { NameEn = "Ahmad Al Harthy", NameFa = "احمد الحارثی", NameAr = "أحمد الحارثي", ExpertEn = "Sales Consultant", ExpertFa = "مشاور فروش", ExpertAr = "مستشار مبيعات", ImageAddress = "/image/H1.jpg" },
+    new() { NameEn = "Sara Al Lawati", NameFa = "سارا اللواتی", NameAr = "سارة اللواتي", ExpertEn = "Property Advisor", ExpertFa = "مشاور ملک", ExpertAr = "مستشارة عقارية", ImageAddress = "/image/H2.jpg" },
+    new() { NameEn = "Yousef Al Busaidi", NameFa = "یوسف البوسعیدی", NameAr = "يوسف البوسعيدي", ExpertEn = "Rental Specialist", ExpertFa = "متخصص اجاره", ExpertAr = "متخصص إيجارات", ImageAddress = "/image/H3.jpg" },
+    new() { NameEn = "Maha Al Nabhani", NameFa = "ماها النبهانی", NameAr = "ماها النبهاني", ExpertEn = "Investment Advisor", ExpertFa = "مشاور سرمایه‌گذاری", ExpertAr = "مستشارة استثمار", ImageAddress = "/image/H4.jpg" },
+
+    new() { NameEn = "Maedeh Najafian", NameFa = "مائده نجفیان", NameAr = "مائدة نجفيان", ExpertEn = "Real Estate Consultant", ExpertFa = "مشاور املاک", ExpertAr = "مستشارة عقارية", ImageAddress = "/image/H5.jpg" },
+    new() { NameEn = "Yasaman Salamatizadeh", NameFa = "یاسمن سلامتی زاده", NameAr = "ياسمن سلامتي زاده", ExpertEn = "Real Estate Consultant", ExpertFa = "مشاور املاک", ExpertAr = "مستشارة عقارية", ImageAddress = "/image/H6.jpg" },
+    new() { NameEn = "Nasrin Pirmoradian", NameFa = "نسرین پیرمرادیان", NameAr = "نسرين بيرمراديان", ExpertEn = "Real Estate Consultant", ExpertFa = "مشاور املاک", ExpertAr = "مستشارة عقارية", ImageAddress = "/image/H7.jpg" },
+    new() { NameEn = "Zahra Habibi", NameFa = "زهرا حبیبی", NameAr = "زهراء حبيبي", ExpertEn = "Real Estate Consultant", ExpertFa = "مشاور املاک", ExpertAr = "مستشارة عقارية", ImageAddress = "/image/H8.jpg" },
+    new() { NameEn = "Zahra Hosseini", NameFa = "زهرا حسینی", NameAr = "زهراء حسيني", ExpertEn = "Real Estate Consultant", ExpertFa = "مشاور املاک", ExpertAr = "مستشارة عقارية", ImageAddress = "/image/H9.jpg" },
+    new() { NameEn = "Danial Shah Javan", NameFa = "دانیال شاه جوان", NameAr = "دانيال شاه جوان", ExpertEn = "Real Estate Consultant", ExpertFa = "مشاور املاک", ExpertAr = "مستشار عقاري", ImageAddress = "/image/H10.jpg" },
+    new() { NameEn = "Hassan Ghandehari", NameFa = "حسن قندهاری", NameAr = "حسن قندهاري", ExpertEn = "Real Estate Consultant", ExpertFa = "مشاور املاک", ExpertAr = "مستشار عقاري", ImageAddress = "/image/H11.jpg" }
+};
 
         var articles = new List<Article>
         {
-            new() { TitleEn = "How to Buy Property in Muscat", TitleFa = "چگونه در مسقط ملک بخریم", TitleAr = "كيف تشتري عقارًا في مسقط", SummaryEn = "A quick guide for first-time buyers.", SummaryFa = "راهنمای سریع برای خریداران اول.", SummaryAr = "دليل سريع للمشترين لأول مرة.", ContentEn = "Buying in Oman starts with the right research.", ContentFa = "خرید در عمان با تحقیق درست آغاز می‌شود.", ContentAr = "يبدأ الشراء في عمان بالبحث الصحيح.", AuthorName = "Editorial Team", ImageAddress = "/images/blog-1.jpg", PublishedAt = DateTime.UtcNow.AddDays(-2), IsPublished = true },
-            new() { TitleEn = "Best Areas for Rental Homes", TitleFa = "بهترین مناطق برای اجاره خانه", TitleAr = "أفضل المناطق لإيجار المنازل", SummaryEn = "Where tenants are looking this year.", SummaryFa = "امسال مستأجران به دنبال کجا هستند.", SummaryAr = "أين يبحث المستأجرون هذا العام.", ContentEn = "The rental market is shifting toward waterfront communities.", ContentFa = "بازار اجاره به سمت مناطق ساحلی در حال حرکت است.", ContentAr = "يتحول سوق الإيجار نحو المجتمعات المطلة على البحر.", AuthorName = "Editorial Team", ImageAddress = "/images/blog-2.jpg", PublishedAt = DateTime.UtcNow.AddDays(-5), IsPublished = true },
-            new() { TitleEn = "Oman Real Estate Outlook", TitleFa = "چشم‌انداز املاک عمان", TitleAr = "آفاق العقارات في عمان", SummaryEn = "Market trends and opportunities.", SummaryFa = "روندها و فرصت‌های بازار.", SummaryAr = "اتجاهات السوق والفرص.", ContentEn = "Investors are showing increasing interest in mixed-use developments.", ContentFa = "سرمایه‌گذاران علاقه بیشتری به پروژه‌های چندمنظوره نشان می‌دهند.", ContentAr = "يظهر المستثمرون اهتمامًا متزايدًا بالمشاريع متعددة الاستخدامات.", AuthorName = "Editorial Team", ImageAddress = "/images/blog-3.jpg", PublishedAt = DateTime.UtcNow.AddDays(-8), IsPublished = true },
-            new() { TitleEn = "Preparing a Home for Sale", TitleFa = "آماده‌سازی خانه برای فروش", TitleAr = "تهيئة المنزل للبيع", SummaryEn = "Improve value before listing.", SummaryFa = "قبل از ثبت آگهی ارزش را بالا ببرید.", SummaryAr = "حسّن القيمة قبل الإدراج.", ContentEn = "Presentation matters when marketing a property.", ContentFa = "نحوه ارائه ملک در بازاریابی بسیار مهم است.", ContentAr = "طريقة عرض العقار مهمة في التسويق.", AuthorName = "Editorial Team", ImageAddress = "/images/blog-4.jpg", PublishedAt = DateTime.UtcNow.AddDays(-11), IsPublished = true }
+            new() { TitleEn = "How to Buy Property in Muscat", TitleFa = "چگونه در مسقط ملک بخریم", TitleAr = "كيف تشتري عقارًا في مسقط", SummaryEn = "A quick guide for first-time buyers.", SummaryFa = "راهنمای سریع برای خریداران اول.", SummaryAr = "دليل سريع للمشترين لأول مرة.", ContentEn = "Buying in Oman starts with the right research.", ContentFa = "خرید در عمان با تحقیق درست آغاز می‌شود.", ContentAr = "يبدأ الشراء في عمان بالبحث الصحيح.", AuthorName = "Editorial Team", ImageAddress = "/image/H1.jpg", PublishedAt = DateTime.UtcNow.AddDays(-2), IsPublished = true },
+            new() { TitleEn = "Best Areas for Rental Homes", TitleFa = "بهترین مناطق برای اجاره خانه", TitleAr = "أفضل المناطق لإيجار المنازل", SummaryEn = "Where tenants are looking this year.", SummaryFa = "امسال مستأجران به دنبال کجا هستند.", SummaryAr = "أين يبحث المستأجرون هذا العام.", ContentEn = "The rental market is shifting toward waterfront communities.", ContentFa = "بازار اجاره به سمت مناطق ساحلی در حال حرکت است.", ContentAr = "يتحول سوق الإيجار نحو المجتمعات المطلة على البحر.", AuthorName = "Editorial Team", ImageAddress = "/image/H2.jpg", PublishedAt = DateTime.UtcNow.AddDays(-5), IsPublished = true },
+            new() { TitleEn = "Oman Real Estate Outlook", TitleFa = "چشم‌انداز املاک عمان", TitleAr = "آفاق العقارات في عمان", SummaryEn = "Market trends and opportunities.", SummaryFa = "روندها و فرصت‌های بازار.", SummaryAr = "اتجاهات السوق والفرص.", ContentEn = "Investors are showing increasing interest in mixed-use developments.", ContentFa = "سرمایه‌گذاران علاقه بیشتری به پروژه‌های چندمنظوره نشان می‌دهند.", ContentAr = "يظهر المستثمرون اهتمامًا متزايدًا بالمشاريع متعددة الاستخدامات.", AuthorName = "Editorial Team", ImageAddress = "/image/H3.jpg", PublishedAt = DateTime.UtcNow.AddDays(-8), IsPublished = true },
+            new() { TitleEn = "Preparing a Home for Sale", TitleFa = "آماده‌سازی خانه برای فروش", TitleAr = "تهيئة المنزل للبيع", SummaryEn = "Improve value before listing.", SummaryFa = "قبل از ثبت آگهی ارزش را بالا ببرید.", SummaryAr = "حسّن القيمة قبل الإدراج.", ContentEn = "Presentation matters when marketing a property.", ContentFa = "نحوه ارائه ملک در بازاریابی بسیار مهم است.", ContentAr = "طريقة عرض العقار مهمة في التسويق.", AuthorName = "Editorial Team", ImageAddress = "/image/H4.jpg", PublishedAt = DateTime.UtcNow.AddDays(-11), IsPublished = true }
         };
 
         await db.AddRangeAsync(homeGroup);
@@ -202,7 +210,7 @@ public static class DbInitializer
             FloorMaterials = new List<Material> { materials[0], materials[1] }
         };
 
-        var image = new HouseImage { House = house, ImageAddress = "/images/property-1.jpg" };
+        var image = new HouseImage { House = house, ImageAddress = "/image/H1.jpg" };
 
         await db.AddAsync(floor);
         await db.AddAsync(image);
